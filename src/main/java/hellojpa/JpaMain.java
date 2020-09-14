@@ -17,17 +17,16 @@ public class JpaMain {
         tx.begin();
 
         try {
-            //Member findMember = em.find(Member.class, 1L);
-            List<Member> result = em.createQuery("select m from Member as m", Member.class)
-                    .setFirstResult(5)
-                    .setMaxResults(8)
-                    .getResultList();
 
-            for(Member member : result){
-                System.out.println("member.name = " + member.getName());
-            }
+            //비영속
+            Member member = new Member();
+            member.setId(100L);
+            member.setName("HelloJPA");
 
-            tx.commit();
+            //영속
+            em.persist(member);
+
+            tx.commit(); // 커밋시점에 DB에 저장된다.
         } catch (Exception e) {
             tx.rollback();
         } finally {
