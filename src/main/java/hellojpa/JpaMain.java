@@ -17,32 +17,27 @@ public class JpaMain {
         tx.begin();
 
         try {
-            //영속
-            /* 영속 컨텍스트 동일성 보장
-            Member findMember1 = em.find(Member.class, 100L);
-            Member findMember2 = em.find(Member.class, 100L);
 
-            System.out.println("result = " + (findMember1 == findMember2));
-            */
+            Member member1 = new Member();
+            member1.setUsername("A");
 
-            /* 쓰기지연
-            Member member1 = new Member(150L, "A");
-            Member member2 = new Member(160L, "B");
+            Member member2 = new Member();
+            member2.setUsername("A");
+
+            Member member3 = new Member();
+            member3.setUsername("A");
+
+            System.out.println("===========");
 
             em.persist(member1);
             em.persist(member2);
+            em.persist(member3);
 
-            System.out.println("================");
-            */
+            System.out.println("member1 = " + member1);
+            System.out.println("member2 = " + member2);
+            System.out.println("member3 = " + member3);
 
-            Member member = em.find(Member.class, 150L);
-            member.setName("ZZZZZ");
-
-            if( member.getName().equals("ZZZZZ")){
-                em.persist(member);
-            }
-
-            System.out.println("================");
+            System.out.println("===========");
 
             tx.commit(); // 커밋시점에 DB에 저장된다.
         } catch (Exception e) {
