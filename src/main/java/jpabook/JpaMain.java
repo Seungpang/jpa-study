@@ -3,6 +3,8 @@ package jpabook;
 
 import hellojpa.Member;
 import hellojpa.Team;
+import jpabook.jpashop.domain.Order;
+import jpabook.jpashop.domain.OrderItem;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -20,26 +22,11 @@ public class JpaMain {
         tx.begin();
 
         try {
-            //저장
-            Team team = new Team();
-            team.setName("TeamA");
-            //team.getMembers().add(member);
-            em.persist(team);
 
-            Member member = new Member();
-            member.setUsername("member1");
-            //member.changeTeam(team); 연관관계 메서드
-            em.persist(member);
+            Order order = new Order();
+            order.addOrderItem(new OrderItem());
 
-            team.addMember(member); //연관관계 메서드 (두곳중 한곳에서만)
-
-            Team findTeam = em.find(Team.class, team.getId());
-            List<Member> members = findTeam.getMembers();
-
-            for(Member m : members){
-                System.out.println("m.getUsername() = " + m.getUsername());
-            }
-
+            
             tx.commit(); // 커밋시점에 DB에 저장된다.
         } catch (Exception e) {
             tx.rollback();
