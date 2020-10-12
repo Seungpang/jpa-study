@@ -23,10 +23,17 @@ public class JpaMain {
 
         try {
 
-            Order order = new Order();
-            order.addOrderItem(new OrderItem());
+            Member member = new Member();
+            member.setUsername("member1");
 
-            
+            em.persist(member);
+
+            Team team = new Team();
+            team.setName("teamA");
+            team.getMembers().add(member);
+
+            em.persist(team);
+
             tx.commit(); // 커밋시점에 DB에 저장된다.
         } catch (Exception e) {
             tx.rollback();

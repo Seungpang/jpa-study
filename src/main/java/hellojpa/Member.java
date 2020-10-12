@@ -16,7 +16,7 @@ public class Member {
     private String username;
 
     @ManyToOne
-    @JoinColumn(name = "TEAM_ID")
+    @JoinColumn(insertable = false, updatable = false)
     private Team team;
 
     public Long getId() {
