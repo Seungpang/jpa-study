@@ -2,6 +2,7 @@ package jpabook;
 
 
 import hellojpa.Member;
+import hellojpa.Movie;
 import hellojpa.Team;
 import jpabook.jpashop.domain.Order;
 import jpabook.jpashop.domain.OrderItem;
@@ -22,17 +23,20 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Movie movie = new Movie();
+            movie.setDirector("A");
+            movie.setActor("BB");
+            movie.setName("테넷");
+            movie.setPrice(10000);
 
-            Member member = new Member();
-            member.setUsername("member1");
+            em.persist(movie);
 
-            em.persist(member);
+            em.flush();
+            em.clear();
 
-            Team team = new Team();
-            team.setName("teamA");
-            team.getMembers().add(member);
+            Movie findMovie = em.find(Movie.class, movie.getId());
+            System.out.println("findMovie = " + findMovie);
 
-            em.persist(team);
 
             tx.commit(); // 커밋시점에 DB에 저장된다.
         } catch (Exception e) {
