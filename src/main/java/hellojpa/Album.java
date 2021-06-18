@@ -1,10 +1,11 @@
 package hellojpa;
 
 import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorColumn("A")
+@DiscriminatorValue("A")
 public class Album extends Item {
     private String artist;
 }

@@ -1,5 +1,6 @@
 package jpabook.jpashop.domain;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 
 @Entity
 @Table(name = "ORDERS")
-public class Order {
+public class Order extends BaseEntity {
 
     @Id
     @GeneratedValue

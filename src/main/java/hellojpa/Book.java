@@ -1,10 +1,11 @@
 package hellojpa;
 
 import javax.persistence.DiscriminatorColumn;
+import javax.persistence.DiscriminatorValue;
 import javax.persistence.Entity;
 
 @Entity
-@DiscriminatorColumn(name = "B")
+@DiscriminatorValue("B")
 public class Book extends Item{
 
     private String author;
