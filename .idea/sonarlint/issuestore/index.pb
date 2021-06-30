@@ -45,3 +45,7 @@ A
 ex1-hello-jpa.iml,8/8/881759f341a096fb2db3afa0d6e5ede1098681c0
 S
 #src/main/java/hellojpa/JpaMain.java,3/8/3818751ba7a7e2bbfde51b6c3126a02f97f5a644
+Q
+!src/main/java/hellojpa/Child.java,4/8/48d6c9fed6f1a2e54a6a3560ffb4d0f8d7b9aa18
+R
+"src/main/java/hellojpa/Parent.java,4/4/44edf2283231ef941ed7d9f231ed01b376d49e57
