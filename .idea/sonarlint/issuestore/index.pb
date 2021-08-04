@@ -49,3 +49,5 @@ Q
 !src/main/java/hellojpa/Child.java,4/8/48d6c9fed6f1a2e54a6a3560ffb4d0f8d7b9aa18
 R
 "src/main/java/hellojpa/Parent.java,4/4/44edf2283231ef941ed7d9f231ed01b376d49e57
+b
+2src/main/java/jpabook/jpashop/domain/Category.java,7/c/7c325c56d88e2af5c4e8887edd3032a03187fd9c

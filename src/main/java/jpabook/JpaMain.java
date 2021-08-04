@@ -20,19 +20,6 @@ public class JpaMain {
 
         try {
 
-            Member member = new Member();
-            member.setName("hello");
-
-            em.persist(member);
-
-            em.flush();
-            em.clear();
-
-            Member findMember = em.find(Member.class, member.getId());
-            System.out.println("findMember = " + findMember.getId());
-            System.out.println("findMember = " + findMember.getName());
-
-
             tx.commit(); // 커밋시점에 DB에 저장된다.
         } catch (Exception e) {
             tx.rollback();
