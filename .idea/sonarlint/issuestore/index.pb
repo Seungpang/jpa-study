@@ -51,3 +51,9 @@ R
 "src/main/java/hellojpa/Parent.java,4/4/44edf2283231ef941ed7d9f231ed01b376d49e57
 b
 2src/main/java/jpabook/jpashop/domain/Category.java,7/c/7c325c56d88e2af5c4e8887edd3032a03187fd9c
+U
+%src/main/java/hellojpa/ValueMain.java,1/4/148f6c5da2041fc73bae5e8e1260a522686ae1fc
+R
+"src/main/java/hellojpa/Period.java,a/0/a0b3136a164e8bbec40efc2281f122de4175ab86
+S
+#src/main/java/hellojpa/Address.java,e/d/ed0ba483127da0c1ee616e1633db429d81762845
