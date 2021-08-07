@@ -57,3 +57,7 @@ R
 "src/main/java/hellojpa/Period.java,a/0/a0b3136a164e8bbec40efc2281f122de4175ab86
 S
 #src/main/java/hellojpa/Address.java,e/d/ed0ba483127da0c1ee616e1633db429d81762845
+Y
+)src/main/java/hellojpa/AddressEntity.java,2/8/288dd2a061bd2aef4a50d3ec6f052bc0991950b2
+a
+1src/main/java/jpabook/jpashop/domain/Address.java,9/8/98492f6f3097d889c22d8b09f921501375c9ea99
