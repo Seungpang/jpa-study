@@ -61,3 +61,5 @@ Y
 )src/main/java/hellojpa/AddressEntity.java,2/8/288dd2a061bd2aef4a50d3ec6f052bc0991950b2
 a
 1src/main/java/jpabook/jpashop/domain/Address.java,9/8/98492f6f3097d889c22d8b09f921501375c9ea99
+]
+-jpa_study/src/main/java/hellojpa/JpaMain.java,2/c/2c7acd650f3ff9f6b3c06eadd7b3d86fa97f30fd
