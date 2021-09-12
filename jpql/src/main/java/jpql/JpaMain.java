@@ -28,6 +28,11 @@ public class JpaMain {
             member.setAge(10);
             member.setType(MemberType.ADMIN);
 
+
+            Member member2 = new Member();
+            member2.setUsername("관리자");
+            em.persist(member2);
+
             member.setTeam(team);
 
             em.persist(member);
@@ -35,34 +40,15 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            String query =
-                "select " +
-                    "case when m.age <= 10 then '학생요금' " +
-                    "     when m.age >= 60 then '경로요금' " +
-                    "     else '일반요금' " +
-                    "end " +
-                    "from Member m";
-            List<String> resultList = em.createQuery(query, String.class)
-                .getResultList();
+            String query = "select 'a' || 'b' From Member m ";
+            String query2 = "select substring(m.username,2,3) From Member m ";
+            String query3 = "select locate('de','abcdefg') From Member m ";
+            String query4 = "select function('group_concat', m.username) From Member m";
 
-            String query2 = "select coalesce(m.username, '이름 없는 회원') from Member m ";
-            List<String> resultList2 = em.createQuery(query2, String.class)
-                .getResultList();
-
-            String query3 = "select nullif(m.username, '관리자') as username " +
-                "from Member m ";
-            List<String> resultList3 = em.createQuery(query3, String.class)
+            List<String> resultList = em.createQuery(query4, String.class)
                 .getResultList();
 
             for (String s : resultList) {
-                System.out.println("s = " + s);
-            }
-
-            for (String s : resultList2) {
-                System.out.println("s = " + s);
-            }
-
-            for (String s : resultList3) {
                 System.out.println("s = " + s);
             }
 

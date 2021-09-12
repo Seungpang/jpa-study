@@ -22,4 +22,13 @@
 + BETWEEN, LIKE, IS NULL
 
 ### 조건식 - CASE 식
-+ 
+
+### JPQL 기본 함수
++ CONCAT
++ SUBSTRING
++ TRIM
++ LOWER, UPPER
++ LENGTH
++ LOCATE
++ ABS, SQRT, MOD
++ SIZE, INDEX(JPA 용도)
