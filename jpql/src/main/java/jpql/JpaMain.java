@@ -24,7 +24,7 @@ public class JpaMain {
             em.persist(team);
 
             Member member = new Member();
-            member.setUsername("member1");
+            member.setUsername("관리자");
             member.setAge(10);
             member.setType(MemberType.ADMIN);
 
@@ -35,16 +35,35 @@ public class JpaMain {
             em.flush();
             em.clear();
 
-            String query = "select m.username, 'HELLO', TRUE From Member m " +
-                            "where m.type = :userType";
-            List<Object[]> result = em.createQuery(query)
-                .setParameter("userType", MemberType.ADMIN)
+            String query =
+                "select " +
+                    "case when m.age <= 10 then '학생요금' " +
+                    "     when m.age >= 60 then '경로요금' " +
+                    "     else '일반요금' " +
+                    "end " +
+                    "from Member m";
+            List<String> resultList = em.createQuery(query, String.class)
                 .getResultList();
 
-            for (Object[] objects : result) {
-                System.out.println("objects = " + objects[0]);
-                System.out.println("objects = " + objects[1]);
-                System.out.println("objects = " + objects[2]);
+            String query2 = "select coalesce(m.username, '이름 없는 회원') from Member m ";
+            List<String> resultList2 = em.createQuery(query2, String.class)
+                .getResultList();
+
+            String query3 = "select nullif(m.username, '관리자') as username " +
+                "from Member m ";
+            List<String> resultList3 = em.createQuery(query3, String.class)
+                .getResultList();
+
+            for (String s : resultList) {
+                System.out.println("s = " + s);
+            }
+
+            for (String s : resultList2) {
+                System.out.println("s = " + s);
+            }
+
+            for (String s : resultList3) {
+                System.out.println("s = " + s);
             }
 
             tx.commit(); // 커밋시점에 DB에 저장된다.

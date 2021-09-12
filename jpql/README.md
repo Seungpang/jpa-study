@@ -20,3 +20,6 @@
 + AND, OR, NOT
 + =, >, >=, <, <=, <>
 + BETWEEN, LIKE, IS NULL
+
+### 조건식 - CASE 식
++ 
